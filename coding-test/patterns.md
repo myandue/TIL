@@ -1,0 +1,2 @@
+- two_sum: unordered_map으로 O(n). 체크 먼저 -> 삽입 나중 (먼저 삽입시 본인 가리키는 버그)
+- most_frequent: unordered_map<char, int> + m[c]++ (key가 없을 경우 자동으로 0이 들어감.)
