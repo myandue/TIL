@@ -16,6 +16,7 @@ Player::Player(std::string name, int hp, int attackPower)
     : Character(name, hp, attackPower), level(1)
 {}
 ```
+- 여기서 `Player::`는 "Player 클래스 소속"이라는 표시다. Player 클래스의 Player(...)를 구현한 것.
 - 자식 객체 안에는 부모 부분이 통째로 들어있어서, 자식을 만들 때 부모 부분부터 지어야함.
 - Character에 3인자 생성자만 있으므로, 초기화 리스트에서 `Character(...)`를 반드시 명시 호출해주어야한다. 빼먹으면 컴파일 에러.
 - 부모 생성자 -> 자식 멤버 초기화 순서.
