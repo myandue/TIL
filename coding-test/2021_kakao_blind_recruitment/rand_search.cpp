@@ -42,11 +42,12 @@ vector<int> solution(vector<string> info, vector<string> query) {
         string lang, job, career, food, score, dummy;
         ss >> lang >> dummy >> job >> dummy >> career >> dummy >> food >> score;
         
-        vector<int> v = um[lang+job+career+food];
+        auto found = um.find(lang+job+career+food); // find: 찾으면 원소를 가리키는 반복자를, 못찾으면 `end()`를 돌려준다.
+        if (found == um.end()) { answer.push_back(0); continue; }
+        const vector<int>& v = found -> second;
         auto it = lower_bound(v.begin(), v.end(), stoi(score));
         int idx = it - v.begin();
         answer.push_back(v.size() - idx);
-        
     }
     return answer;
 }
